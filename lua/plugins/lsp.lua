@@ -15,6 +15,14 @@ return {
     lazy = false,
     ft = { "cs", "razor" },
     opts = {},
-  }
+    config = function()
+      vim.filetype.add({
+        extension = {
+        razor = "razor",
+        cshtml = "razor"
+      },
+    })
+  end,
+  },
 }
 

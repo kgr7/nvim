@@ -1,10 +1,3 @@
-require("config.lazy") 
+require("config.lazy")
+require("config.options")
 
-vim.cmd.colorscheme("tokyonight")
-
-vim.filetype.add({
-  extension = {
-    razor = "razor",
-    cshtml = "razor"
-  },
-})
