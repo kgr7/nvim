@@ -4,7 +4,7 @@ i.e. Syntax highlighting for dotnet including .razor files, `gd` goto definition
 
 ## Install the following using :Mason
 
-- roslyn
+- roslyn (maybe roslyn-language-server)
 - html-lsp
 - css-lsp
 - json-lsp
