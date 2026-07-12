@@ -14,6 +14,8 @@ Also for quicker fzf telescope implementation, it must be built with cmake. On W
 
 Ripgrep `rg` must also be installed and added to path. 
 
+`cc` is required on linux to compile telescope-fzf-native
+
 ## Future
 todo:
 - Nerd font (better icons for telescope etc.)
