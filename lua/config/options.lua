@@ -23,3 +23,4 @@ vim.opt.clipboard = 'unnamedplus'
 -- search and undo
 vim.opt.incsearch = true
 vim.opt.undofile = true
+

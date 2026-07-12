@@ -1,5 +1,15 @@
 vim.lsp.config('roslyn', {})
 
+vim.lsp.on_type_formatting.enable()
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
+
 return {
  {
     "mason-org/mason.nvim", opts = {},
