@@ -4,7 +4,6 @@ i.e. Syntax highlighting for dotnet including .razor files, `gd` goto definition
 
 ## Install the following using :Mason
 
-- roslyn (maybe roslyn-language-server)
 - html-lsp
 - css-lsp
 - json-lsp
@@ -15,6 +14,9 @@ Also for quicker fzf telescope implementation, it must be built with cmake. On W
 Ripgrep `rg` must also be installed and added to path. 
 
 `cc` is required on linux to compile telescope-fzf-native
+
+Must have language server installed for nvim-lspconfig to be able to use it:
+`dotnet tool install -g roslyn-language-server --prerelease`
 
 ## Future
 todo:

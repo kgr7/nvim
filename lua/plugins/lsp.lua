@@ -1,5 +1,11 @@
-vim.lsp.config('roslyn', {})
+vim.filetype.add({
+  extension = {
+    razor = "razor",
+    cshtml = "razor",
+  },
+})
 
+-- Consider disabling this while testing Razor performance
 vim.lsp.on_type_formatting.enable()
 
 vim.diagnostic.config({
@@ -10,29 +16,32 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
+vim.lsp.enable("roslyn_ls")
+
+vim.lsp.config("roslyn_ls", {
+    filetypes = { "razor", "cs" },
+
+    settings = {
+        -- better performance
+        ["csharp|background_analysis"] = {
+            dotnet_compiler_diagnostics_scope = "openFiles",
+            dotnet_analyzer_diagnostics_scope = "openFiles",
+        }
+    }
+})
+
 return {
- {
-    "mason-org/mason.nvim", opts = {},
- },
- {
+  {
     "neovim/nvim-lspconfig",
-    dependencies = { "mason-org/mason.nvim" },
   },
   {
-    "seblyng/roslyn.nvim",
-    ---@module 'roslyn.config'
-    ---@type RoslynNvimConfig
-    lazy = false,
-    ft = { "cs", "razor" },
-    opts = {},
-    config = function()
-      vim.filetype.add({
-        extension = {
-        razor = "razor",
-        cshtml = "razor"
+    "mason-org/mason.nvim",
+    opts = {
+      registries = {
+        "github:mason-org/mason-registry",
+        -- Often recommended for newer Roslyn builds
+        "github:Crashdummyy/mason-registry",
       },
-    })
-  end,
-  },
+    },
+  }
 }
-
