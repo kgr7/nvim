@@ -30,6 +30,8 @@ vim.lsp.config("roslyn_ls", {
     }
 })
 
+vim.lsp.enable("rust-analyzer")
+
 return {
   {
     "neovim/nvim-lspconfig",
