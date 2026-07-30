@@ -8,25 +8,30 @@ return {
       options = {
           theme = {
               normal = {
-                a = { bg = nil },
-                b = { bg = nil },
-                c = { bg = nil },
+                a = { bg = nil, fg = '#3B4252' },
+                b = { bg = nil, fg = '#3B4252'  },
+                c = { bg = nil, fg = '#3B4252' },
               }
           },
-          component_separators = { left = nil, right = nil }
+          component_separators = { left = nil, right = nil },
+          globalstatus = true
         },
       sections = {
-        lualine_a = { "mode", dotnet.lualine.jobs },
+        lualine_a = { dotnet.lualine.jobs },
         lualine_c = { 
             {
                 function()
-                    return "filename |"
+                    return "filename │ "
                 end,
+                color = { fg = '#3B4252' },
                 padding = { left = 1 }
             },
         },
         lualine_x = {
-          { function() return '|' end },
+          {
+              function() return '│' end,
+              color = { fg = '#3B4252'}
+          },
           dotnet.lualine.active_project,
           {
             dotnet.lualine.run_status,

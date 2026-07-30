@@ -26,4 +26,4 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.incsearch = true
 vim.opt.undofile = true
 
-vim.opt.fillchars:append({ stl = '-' })
+vim.opt.fillchars:append({ stl = '─' })
