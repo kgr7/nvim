@@ -1,10 +1,12 @@
 -- core settings
 vim.opt.number = true
+vim.opt.numberwidth = 4
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.wrap = false
+vim.opt.fillchars = { eob = " " }
 
 -- indentation
 vim.opt.tabstop = 4
@@ -24,3 +26,4 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.incsearch = true
 vim.opt.undofile = true
 
+vim.opt.fillchars:append({ stl = '-' })
