@@ -20,6 +20,7 @@ Must have language server installed for nvim-lspconfig to be able to use it:
 
 ## Future
 todo:
-- Nerd font (better icons for telescope etc.)
 - copilot / claude (?)
+- inlayed messages from LSP / triggerable show/hide
+- fix filename in lualine, update lualine colour to match nvim pane border
 
