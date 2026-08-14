@@ -65,4 +65,7 @@ vim.fn.sign_define('DapBreakpointRejected', { text='', texthl='DapBreakpoint'
 vim.fn.sign_define('DapLogPoint', { text='', texthl='DapLogPoint', linehl='DapLogPoint', numhl= 'DapLogPoint' })
 vim.fn.sign_define('DapStopped', { text='', texthl='DapStopped', linehl='DapStopped', numhl= 'DapStopped' })
 
-
+ -- method/tag folding (managed by nvim-ufo)
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
