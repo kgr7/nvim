@@ -45,7 +45,7 @@ return {
                             done = '✓',
                             separator = ' ',
                         },
-                        ignore_lsp = {},  -- e.g. { 'null-ls' } to hide noisy attached servers
+                        ignore_lsp = { 'GitHub Copilot', 'easy_dotnet_in_process' },  -- e.g. { 'null-ls' } to hide noisy attached servers
                         show_name = true, -- set false if you just want the spinner/checkmark, no client name
                         color = { fg = '#3B4252' },
                     },
