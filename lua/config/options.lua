@@ -25,6 +25,18 @@ vim.opt.clipboard = 'unnamedplus'
 -- search and undo
 vim.opt.incsearch = true
 vim.opt.undofile = true
+vim.opt.autoread = true
+vim.opt.updatetime = 250
+
+vim.api.nvim_create_autocmd({
+    "FocusGained",
+    "BufEnter",
+    "CursorHold",
+    "CursorHoldI",
+}, {
+    pattern = "*",
+    command = "checktime",
+})
 
 -- fill characters for status bar, used by vim 
 vim.opt.fillchars:append({ stl = '─' })
