@@ -1,4 +1,4 @@
-vim.lsp.enable("rust-analyzer")
+vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("somesass_ls")
 
@@ -13,12 +13,6 @@ return {
   },
   {
     "mason-org/mason.nvim",
-    opts = {
-      registries = {
-        "github:mason-org/mason-registry",
-        -- Often recommended for newer Roslyn builds
-        "github:Crashdummyy/mason-registry",
-      },
-    },
+    opts = {},
   }
 }

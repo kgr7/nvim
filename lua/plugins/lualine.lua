@@ -1,10 +1,11 @@
-local dotnet = require("easy-dotnet")
-
 return {
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        opts = {
+        dependencies = { 'nvim-tree/nvim-web-devicons', 'GustavEikaas/easy-dotnet.nvim' },
+        opts = function()
+            local dotnet = require("easy-dotnet")
+
+            return {
             options = {
                 theme = {
                     normal = {
@@ -45,7 +46,7 @@ return {
                             done = '✓',
                             separator = ' ',
                         },
-                        ignore_lsp = { 'GitHub Copilot', 'easy_dotnet_in_process' },  -- e.g. { 'null-ls' } to hide noisy attached servers
+                        ignore_lsp = { 'GitHub Copilot', 'easy_dotnet_in_process' },
                         show_name = true, -- set false if you just want the spinner/checkmark, no client name
                         color = { fg = '#3B4252' },
                     },
@@ -56,6 +57,7 @@ return {
                     },
                 },
             },
-        },
+            }
+        end,
     }
 }

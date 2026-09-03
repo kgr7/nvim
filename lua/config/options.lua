@@ -32,25 +32,25 @@ vim.opt.fillchars:append({ stl = '─' })
 -- replace diagnostic signs with icons
 vim.diagnostic.config({
     underline = false,
+    virtual_text = false,
+    float = {
+        border = "single",
+        format = function(diagnostic)
+            local code = diagnostic.code or vim.tbl_get(diagnostic, "user_data", "lsp", "code") or "?"
+            return string.format(
+                "%s (%s) [%s]",
+                diagnostic.message,
+                diagnostic.source or "unknown",
+                code
+            )
+        end,
+    },
     signs = {
-        active = true,
         text = {
             [vim.diagnostic.severity.ERROR] = "" ,
             [vim.diagnostic.severity.WARN]  = "",
             [vim.diagnostic.severity.HINT]  = "󰌶",
             [vim.diagnostic.severity.INFO]  = "",
-        },
-        virtual_text = false,
-        float = {
-            border = "single",
-            format = function(diagnostic)
-                return string.format(
-                    "%s (%s) [%s]",
-                    diagnostic.message,
-                    diagnostic.source,
-                    diagnostic.code or diagnostic.user_data.lsp.code
-                )
-            end,
         },
     }
 })

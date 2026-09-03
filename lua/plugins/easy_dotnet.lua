@@ -168,9 +168,9 @@ return {
     end, {})
 
     -- Example keybinding
-    vim.keymap.set("n", "<C-p>", function()
+    vim.keymap.set("n", "<leader>dp", function()
       vim.cmd("Dotnet run profile default")
-    end)
+    end, { desc = "Run default .NET profile" })
   end
 }
 }
